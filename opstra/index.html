@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Option Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <section class="dashboard-search">
+      <h1>Options Dashboard</h1>
+      <div>
+        <input type="text" name="search" placeholder="Search Underlying..." />
+        <button>Information</button>
+      </div>
+    </section>
+    <section class="option-sort-filter">
+      <hr />
+      <div class="container">
+        <div class="filter">
+          <p>Filter By:</p>
+          <button>High</button>
+          <button>Earnings</button>
+          <button>Liquidity</button>
+        </div>
+        <div class="sort">
+          <p>Sort By:</p>
+          <button>IV Percentage</button>
+          <button>IV Rank</button>
+          <button>IV Charge</button>
+        </div>
+      </div>
+      <hr />
+    </section>
+    <section class="tiles-sort">
+      <p>
+        Last Updated At: 10:55 AM - 19-07-2023 | * IV/IVPs shift to next month
+        expiry in the last week of front month expiry
+      </p>
+      <i class="fa-solid fa-bars fa-2xl"></i>
+      <i class="fa-solid fa-grip fa-2xl"></i>
+      <button>Refresh</button>
+    </section>
+    <section class="cards__wrapper">
+      <article class="card__container">
+        <div class="card">
+          <div class="card__front">
+            <div class="card__icons">
+              <i class="fa-solid fa-bell"></i>
+              <i class="fa-solid fa-star" style="color: #f39512"></i>
+            </div>
+            <div class="card__info">
+              <h2>NIFTY</h2>
+              <p>&#8377; 19789.15</p>
+              <h4>+18.6 (+0.09%)</h4>
+              <h3>IV : 11.79</h3>
+            </div>
+            <div class="card__badges">
+              <div class="card__rank">
+                <p>IV Rank: 17</p>
+              </div>
+              <div class="card__change">
+                <p>IV Change: +2.08%</p>
+              </div>
+            </div>
+            <div class="card__progressbar">
+              <div>
+                <span>IVP:30</span>
+                <div class="card__progressbar__container">
+                  <div class="card__progressbar__indication"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card__back">
+            <p>Suggested Option Strategies</p>
+            <span>Debit Spread</span>
+            <span>Calender Spread</span>
+            <span>Long Straddle</span>
+            <span>Long Strangle</span>
+          </div>
+        </div>
+      </article>
+    </section>
+  </body>
+  <script>
+    const cardObj = [
+      {
+        name: "BANKNIFTY",
+        value: 45589.5,
+        points: "+105(+0.23%)",
+        IV: 15.14,
+        rank: 26,
+        change: "+4.49%",
+        ivp: 40,
+        strategies: [
+          "Debit spread",
+          "calendar spread",
+          "Long straddle",
+          "long strangle",
+        ],
+      },
+      {
+        name: "ABB",
+        value: 45389.5,
+        points: "+46(+1.23%)",
+        IV: 31.14,
+        rank: 34,
+        change: "+4.49%",
+        ivp: 52,
+        strategies: ["Iron Condor", "Butterfly"],
+      },
+      {
+        name: "BANKNIFTY",
+        value: 45589.5,
+        points: "+105(+0.23%)",
+        IV: 15.14,
+        rank: 26,
+        change: "+4.49%",
+        ivp: 40,
+        strategies: [
+          "Debit spread",
+          "calendar spread",
+          "Long straddle",
+          "long strangle",
+        ],
+      },
+      {
+        name: "ABFRL",
+        value: 213.65,
+        points: "+1.3(+0.61%)",
+        IV: 39.34,
+        rank: 37,
+        change: "+1.49%",
+        ivp: 76,
+        strategies: [
+          "Short Straddle",
+          "Short Strangle",
+          "ratio spread",
+          "credit spread",
+        ],
+      },
+      {
+        name: "ABBOTINDIA",
+        value: 22997.65,
+        points: "+100(-0.23%)",
+        IV: 27.34,
+        rank: 45,
+        change: "+1.49%",
+        ivp: 48,
+        strategies: [
+          "Short Straddle",
+          "Short Strangle",
+          "ratio spread",
+          "credit spread",
+        ],
+      },
+      {
+        name: "ABFRL",
+        value: 213.65,
+        points: "+1.3(+0.61%)",
+        IV: 39.34,
+        rank: 37,
+        change: "+1.49%",
+        ivp: 76,
+        strategies: [
+          "Short Straddle",
+          "Short Strangle",
+          "ratio spread",
+          "credit spread",
+        ],
+      },
+      {
+        name: "BANKNIFTY",
+        value: 45589.5,
+        points: "+105(+0.23%)",
+        IV: 15.14,
+        rank: 26,
+        change: "+4.49%",
+        ivp: 40,
+        strategies: [
+          "Debit spread",
+          "calendar spread",
+          "Long straddle",
+          "long strangle",
+        ],
+      },
+      {
+        name: "ABFRL",
+        value: 213.65,
+        points: "+1.3(+0.61%)",
+        IV: 39.34,
+        rank: 37,
+        change: "+1.49%",
+        ivp: 36,
+        strategies: [
+          "Short Straddle",
+          "Short Strangle",
+          "ratio spread",
+          "credit spread",
+        ],
+      },
+      {
+        name: "ABFRL",
+        value: 213.65,
+        points: "+1.3(+0.61%)",
+        IV: 39.34,
+        rank: 37,
+        change: "+1.49%",
+        ivp: 36,
+        strategies: [
+          "Short Straddle",
+          "Short Strangle",
+          "ratio spread",
+          "credit spread",
+        ],
+      },
+    ];
+
+    const cards__wrapper = document.querySelector(".cards__wrapper");
+
+    for (let card of cardObj) {
+      cards__wrapper.innerHTML += `<article class="card__container">
+        <div class="card">
+          <div class="card__front">
+            <div class="card__icons">
+              <i class="fa-solid fa-bell"></i>
+              <i class="fa-solid fa-star" style="color: #f39512"></i>
+            </div>
+            <div class="card__info">
+              <h2>${card.name}</h2>
+              <p>&#8377; ${card.value}</p>
+              <h4>${card.points}</h4>
+              <h3>IV : ${card.IV}</h3>
+            </div>
+            <div class="card__badges">
+              <div class="card__rank">
+                <p>IV Rank: ${card.rank}</p>
+              </div>
+              <div class="card__change">
+                <p>IV Change: ${card.change}</p>
+              </div>
+            </div>
+            <div class="card__progressbar">
+              <div>
+                <span>IVP:${card.ivp}</span>
+                <div class="card__progressbar__container" ${
+                  card.ivp < 40 && 'style="background-color:#FBC6C2"'
+                }   ${
+        card.ivp >= 40 && card.ivp < 70 && 'style="background-color:#FFE0B2"'
+      }  ${card.ivp >= 70 && 'style="background-color:#C9E7CA"'}>
+                  <div class="card__progressbar__indication" 'style='width:${
+                    card.ivp
+                  }%' ${card.ivp < 40 && 'style="background-color:red"'}  ${
+        card.ivp >= 40 && card.ivp < 70 && 'style="background-color:#FF9800"'
+      }  ${card.ivp >= 70 && 'style="background-color:#4CAF50"'}></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card__back" ${
+            card.ivp < 40 && 'style="background-color:#E57373"'
+          } ${
+        card.ivp >= 40 && card.ivp < 70 && 'style="background-color:#FFB74D"'
+      } ${card.ivp >= 70 && 'style="background-color:#D4E157"'}>
+            <p>Suggested Option Strategies</p>
+          ${card.strategies.map((e) => `<span>${e}</span>`).join("")}
+          </div>
+        </div>
+      </article>`;
+    }
+  </script>
+</html>
